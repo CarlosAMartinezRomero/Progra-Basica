@@ -1,0 +1,1 @@
+& C:/Users/XPG/AppData/Local/Programs/Python/Python313/python.exe "c:/Users/XPG/Documents/GitHub/Progra-Basica/Problemas 10-20/Problema 11"

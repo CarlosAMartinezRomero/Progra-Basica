@@ -1,0 +1,29 @@
+def convertir_temperatura(valor, escala):
+    if escala == 'C':
+        fahrenheit = (valor * 9/5) + 32
+        kelvin = valor + 273.15
+        return fahrenheit, kelvin
+    elif escala == 'F':
+        celsius = (valor - 32) * 5/9
+        kelvin = celsius + 273.15
+        return celsius, kelvin
+    elif escala == 'K':
+        celsius = valor - 273.15
+        fahrenheit = (celsius * 9/5) + 32
+        return celsius, fahrenheit
+    else:
+        raise ValueError("Escala no válida. Use 'C', 'F' o 'K'.")
+
+valor = float(input("Ingrese la temperatura: "))
+escala = input("Ingrese la escala de origen (C, F, K): ").strip().upper()
+
+try:
+    resultado = convertir_temperatura(valor, escala)
+    if escala == 'C':
+        print(f"{valor}°C = {resultado[0]:.2f}°F = {resultado[1]:.2f}K")
+    elif escala == 'F':
+        print(f"{valor}°F = {resultado[0]:.2f}°C = {resultado[1]:.2f}K")
+    elif escala == 'K':
+        print(f"{valor}K = {resultado[0]:.2f}°C = {resultado[1]:.2f}°F")
+except ValueError as e:
+    print(e)

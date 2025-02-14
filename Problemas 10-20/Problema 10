@@ -1,0 +1,39 @@
+def mostrar_menu():
+    print("\nMenú de opciones:")
+    print("1. Leer archivo")
+    print("2. Escribir en el archivo")
+    print("3. Salir")
+
+def leer_archivo(nombre_archivo):
+    try:
+        with open(nombre_archivo, 'r') as archivo:
+            print("\nContenido del archivo:")
+            print(archivo.read())
+    except FileNotFoundError:
+        print("El archivo no existe.")
+
+def escribir_archivo(nombre_archivo):
+    texto = input("Ingrese el texto que desea escribir: ")
+    with open(nombre_archivo, 'w') as archivo:
+        archivo.write(texto)
+    print("Texto escrito correctamente.")
+
+def main():
+    nombre_archivo = "archivo.txt"
+
+    while True:
+        mostrar_menu()
+        opcion = input("Seleccione una opción (1-3): ")
+
+        if opcion == '1':
+            leer_archivo(nombre_archivo)
+        elif opcion == '2':
+            escribir_archivo(nombre_archivo)
+        elif opcion == '3':
+            print("Saliendo del programa. ¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida, intente de nuevo.")
+
+if __name__ == "__main__":
+    main()
