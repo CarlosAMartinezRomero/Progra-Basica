@@ -1,13 +1,9 @@
 def es_palindromo(cadena):
-    # Limpiar la cadena: eliminar espacios y convertir a minúsculas
     cadena_limpia = ''.join(c for c in cadena if c.isalnum()).lower()
-    # Verificar si es igual al revés
     return cadena_limpia == cadena_limpia[::-1]
 
-# Solicitar al usuario una cadena
 texto = input("Ingrese una cadena para verificar si es un palíndromo: ")
 
-# Verificar y mostrar el resultado
 if es_palindromo(texto):
     print("La cadena es un palíndromo.")
 else:
