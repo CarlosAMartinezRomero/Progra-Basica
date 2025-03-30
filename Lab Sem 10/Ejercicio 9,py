@@ -1,0 +1,65 @@
+# Paradigma Imperativo 
+# Uso de estructuras de control: condicionales y bucles
+def suma_imperativa():
+    numeros = [1, 2, 3, 4, 5]
+    suma = 0
+    for num in numeros:
+        suma += num
+    print("Suma imperativa:", suma)
+
+# Paradigma Estructurado 
+# Código organizado en funciones bien definidas
+def obtener_pares(lista):
+    return [num for num in lista if num % 2 == 0]
+
+def mostrar_lista(lista, mensaje):
+    print(mensaje, lista)
+
+def estructurado():
+    numeros = list(range(1, 11))
+    pares = obtener_pares(numeros)
+    mostrar_lista(numeros, "Lista original:")
+    mostrar_lista(pares, "Números pares:")
+
+# Paradigma Modular 
+# Uso de módulos separados
+
+def modular():
+    a, b = 10, 5
+    print(f"{a} + {b} =", a + b)
+    print(f"{a} - {b} =", a - b)
+    print(f"{a} * {b} =", a * b)
+    print(f"{a} / {b} =", a / b if b != 0 else "Indefinido")
+
+# Paradigma Orientado a Objetos 
+# Definición de clases y objetos
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    
+    def presentarse(self):
+        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.")
+
+def orientado_a_objetos():
+    persona1 = Persona("Carlos", 30)
+    persona2 = Persona("Ana", 25)
+    persona1.presentarse()
+    persona2.presentarse()
+
+# Función Principal
+def main():
+    print("\n Paradigma Imperativo ")
+    suma_imperativa()
+    
+    print("\n Paradigma Estructurado ")
+    estructurado()
+    
+    print("\n Paradigma Modular ")
+    modular()
+    
+    print("\n Paradigma Orientado a Objetos ")
+    orientado_a_objetos()
+
+if __name__ == "__main__":
+    main()
